@@ -3,6 +3,7 @@ body{
     margin: 0;
     padding: 0;
     overflow: visible;
+    background-color: #ffffff;
 }
 
 nav{
@@ -22,16 +23,23 @@ nav{
     height: 100%;
     object-fit: cover;
     position: absolute;
+    display: block;
     top: 0;
     left: 0;
-    z-index: -1;  
+    z-index: -1; 
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 94%, rgba(0, 0, 0, 0) 100%);
+
+
 }
+
 
 .navbar .logo img{
     width: 7%;
     position: absolute;
     left: 21%;
     top: 0.3%;
+    filter: brightness(110%);
     
     
 }
@@ -63,38 +71,77 @@ nav{
     font-weight: 600;
 }
 
-.navbar .navlist ul li a:hover,
+.navbar .navlist ul li a:hover{
+    color: #b3b3b3;
+
+}
+
 .navbar .navlist ul li a:active,
 .navbar .navlist ul li a:focus{
     color: #b3b3b3;
-    /* font-size: 16px; */
-    transform: scale(1.1);
+    font-size: 16px;
 
 }
 
-.navbar .odrerbutton button{
-    color: #ffffff ;
-    background-color: #FFA500;
-    height: 40px;
-    width: 150px;
+
+
+.navbar .odrerbutton button {
+    width: 9em;
+    height: 3em;
+    border-radius: 30em;
     font-size: 14px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    border: 0px;
-    border-radius: 5px;
-    cursor: pointer;
-    position: fixed;
+    font-family: inherit;
+    font-weight: 600;
+    border: none;
+    position: absolute;
     top: 26.5px;
     right: 19%;
-    opacity: 0.9;
-}
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 6px 6px 12px #c5c5c5,
+                -6px -6px 12px #ffffff;
+    }
+   
+.navbar .odrerbutton button::before {
+    content: '';
+    width: 0;
+    height: 3em;
+    border-radius: 30em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to right, #0fd850 0%, #f9f047 100%);
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+   }
+   
+.navbar .odrerbutton button:hover::before {
+    width: 9em;
+   }
+/* .navbar .odrerbutton button{
+        color: #ffffff ;
+        background-color: #FFA500;
+        height: 40px;
+        width: 150px;
+        font-size: 14px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        border: 0px;
+        border-radius: 5px;
+        cursor: pointer;
+        position: fixed;
+        top: 26.5px;
+        right: 19%;
+        opacity: 0.9;
+} */
 
-.navbar .odrerbutton button:hover,
+/* .navbar .odrerbutton button:hover,
 .navbar .odrerbutton button:active,
 .navbar .odrerbutton button:focus{
     color: #000000;
     opacity: 0.6;
-}
+} */
 
 .burgerhut h1{
     text-transform: uppercase;
@@ -104,11 +151,11 @@ nav{
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    padding: 0px 10% ;
+    
 
 }
 
-p{
+.des p{
     text-transform: uppercase;
     font-size: 13px;
     color: #ffffff;
@@ -119,3 +166,398 @@ p{
     transform: translateX(-50%);
     letter-spacing: 1px;
 }
+
+.location{
+
+    box-sizing: border-box;
+    width: 600px;
+    height: 180px;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    transition: all ease 0.4s;
+    box-shadow: rgb(0, 0, 0) 1px 10px 20px -9px;
+    position: absolute;
+    left: 49.85%;
+    transform: translateX(-50%);
+    top: 580px;
+
+    
+}
+.inputloc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: auto;
+                
+    
+}
+
+.inputloc .l1 {
+    background-color: rgb(164, 30, 30);
+    padding: 20px;
+    border: 0;
+    border-radius: 20px;
+    position: absolute;
+    left: 55px;
+    top: 67px;
+    
+}
+
+.inputloc .l1 .loclable{
+    color: #ffffff;
+    font-weight: 500;
+}
+
+
+
+.location .inputloc .input1 .locinput{
+    position: absolute;
+    right: 55px;
+    top: 75px;
+    padding: 14px;
+    background-color: rgb(229, 229, 229);
+    border: 0px;
+    border-radius: 5px;
+    width: 200px;
+
+}
+.location .inputloc .input1 .locinput::placeholder{
+    color: rgb(51, 51, 51);
+    font-family: "Montserrat", serif;;
+    font-size: 14px;
+    font-weight: 500;
+}
+ .location .locationimage{
+    height: 54px;
+    width: auto;
+    position: absolute;
+    left: 256px;
+    top: 68px;
+    filter: brightness(70%);
+ }
+
+.deals h1{
+    letter-spacing: 2px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 125%;
+    font-weight: 620;
+    margin: 0;
+}
+
+
+
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90vw;
+    margin: auto;
+    padding-top: 50px;
+    position: absolute;
+    left: 49.85%;
+    transform: translateX(-50%);
+    top: 840px;
+}
+
+/* Slideshow container */
+.slideshow-container {
+    position: relative;
+    width: 60vw;
+    height: 50vh;
+    background: white;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Slides */
+.slides {
+    position: absolute;
+    max-width: 100%;
+    max-height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+/* Slide animation */
+@keyframes slideshow {
+    0%, 45% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+}
+
+/* Apply animations to slides */
+.slides:nth-child(1) { animation: slideshow 10s infinite 0s; }
+.slides:nth-child(2) { animation: slideshow 10s infinite 5s; }
+
+/* Description container */
+.description-container {
+    width: 26vw;
+    height: 00px;
+    display: flex;
+
+    position: relative;
+    top: -59px;
+}
+
+/* Individual descriptions */
+.description {
+    position: absolute;
+    width: 100%;
+    padding: 20px;
+    font-size: 18px;
+    background: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+    
+}
+
+p{
+    color: black;
+}
+
+/* Apply animations to descriptions */
+.description:nth-child(1) { animation: slideshow 10s infinite 0s; }
+.description:nth-child(2) { animation: slideshow 10s infinite 5s; }
+
+
+.bodybottom{
+    position: absolute;
+    left: 49.85%;
+    transform: translateX(-50%);
+    top: 1320px;
+}
+
+.bodybottom .backburger img{
+    width: 55%;
+    height: auto;
+    position: absolute;
+    left: -49%;
+}
+
+.bodybottom .dec{
+    position: relative;
+    left: 6%;
+}
+
+.bodybottom .dec h2{
+    font-weight: 630;
+    padding: 10px 20px;
+    color: #FFB501 ;
+}
+
+.bodybottom .dec h3{
+    font-weight: 600;
+    padding: 10px 20px;
+}
+
+.bodybottom .dec button{
+    position: absolute;
+    left: 10%;
+}
+
+.bodybottom .deliverybike img{
+    width: 50%;
+    height: auto;
+    position: absolute;
+    left: 101%;
+    top: -12%;
+}
+
+
+/* From Uiverse.io by satyamchaudharydev */ 
+/* inspired form gumroad website */
+.button {
+    --bg: #000;
+    --hover-bg: #FFB501;
+    --hover-text: #000;
+    color: #fff;
+    cursor: pointer;
+    border: 1px solid var(--bg);
+    border-radius: 4px;
+    padding: 0.8em 2em;
+    background: var(--bg);
+    transition: 0.2s;
+  }
+  
+  .button:hover {
+    color: var(--hover-text);
+    transform: translate(-0.25rem, -0.25rem);
+    background: var(--hover-bg);
+    box-shadow: 0.25rem 0.25rem var(--bg);
+  }
+  
+  .button:active {
+    transform: translate(0);
+    box-shadow: none;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer{
+    background-color: #222;
+    padding: 120px;
+    margin-top: 120%;
+    z-index: -1;
+}
+
+.logo img {
+    width: 90px;
+    position: absolute;
+    top: 281.5%;
+    left: 100px;
+    filter: brightness(110%);
+}
+
+.logoline{
+    position: absolute;
+    top: 288.5%;
+    left: 17%;
+    padding: 1px;
+    background-color:rgb(128, 128, 128);
+    width: 859px;
+    
+}
+
+
+.socialmedia ul{
+    list-style: none;
+    position: absolute;
+    top: 282.6%;
+    left: 80%;
+
+
+
+}
+
+.socialmedia ul li{
+    display: inline-block;
+    padding: 13px;
+
+
+}
+
+.x{
+    background-color: #FFB501 ;
+    position: relative;
+    height: 15.5px;
+    width: 15.3px;
+    border-radius: 50px;
+}
+
+.insta{
+    background-color: #FFB501 ;
+    position: relative;
+    height: 15.5px;
+    width: 15.5px;
+    border-radius: 50px;
+
+}
+
+.fb{
+    background-color: #FFB501 ;
+    position: relative;
+    height: 15.5px;
+    width: 15.5px;
+    border-radius: 50px;
+
+}
+.yt{
+    background-color: #FFB501 ;
+    position: relative;
+    height: 15.5px;
+    width: 15.5px;
+    border-radius: 50px;
+}
+
+.socialmedia ul li a img{
+    width: 20px;
+    display: flex;
+    align-items: center;
+
+}
+.ximage{
+    position: absolute;
+    left: 26%;
+    top: 26%;
+
+}
+.igimage{
+    position: absolute;
+    left: 27%;
+    top: 26%;
+
+}
+.fbimage{
+    position: absolute;
+    left: 23.5%;
+    top: 26.9%;
+}
+.ytimage{
+    position: absolute;
+    left: 25.5%;
+    top: 26.9%;
+}
+
+.fbottom{
+    position: relative;
+    margin-left: 14%;
+
+}
+
+.fbottom ul{
+    list-style: none;
+    display: inline-table;
+    padding: 0px 70px;
+    
+    
+}
+.fbottom ul h2{
+    font-weight: 620;
+    color: rgb(255, 255, 255);
+}
+
+.fbottom ul li a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.fbottom h4{
+    position: absolute;
+    left: 42%;
+    transform: translateX(-50%);
+    color: rgb(255, 255, 255);
+    font-weight: 530;
+
+}
+
+
